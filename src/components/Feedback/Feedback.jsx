@@ -1,9 +1,6 @@
 export const Feedback = ({ feedback, totalCount, positivePercent }) => {
-    if (totalCount === 0) {
-        return (<p>No feedback given</p>)
-    }
-
-    return (
+    if (totalCount !== 0) {
+        return (
         <div>
             <p>Good: {feedback.good}</p>
             <p>Neutral: {feedback.neutral}</p>
@@ -11,5 +8,5 @@ export const Feedback = ({ feedback, totalCount, positivePercent }) => {
             <p>Total: {totalCount}</p>
             <p>Positive: {positivePercent}%</p>
         </div>
-    );
+    )}
 }

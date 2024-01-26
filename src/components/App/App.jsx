@@ -2,6 +2,7 @@ import { Description } from '../Description/Description';
 import { useState, useEffect } from 'react';
 import { Feedback } from '../Feedback/Feedback';
 import { Options } from '../Options/Options';
+import { Notification } from '../Notification/Notification';
 
 function App() {
   const feedbackData = JSON.parse(localStorage.getItem('feedback')) || { good: 0, neutral: 0, bad: 0 };
@@ -25,8 +26,9 @@ function App() {
   return (
     <div>
       <Description />
-      <Options feedbackClick={feedbackClick} resetClick={resetClick} />
-      <Feedback feedback={feedback} totalCount={totalCount} positivePercent={positivePercent }/>
+      <Options feedbackClick={feedbackClick} resetClick={resetClick} totalCount={totalCount} />
+      <Feedback feedback={feedback} totalCount={totalCount} positivePercent={positivePercent} />
+      <Notification totalCount={totalCount} />
     </div>
   );
 }
