@@ -4,7 +4,8 @@ import { Feedback } from '../Feedback/Feedback';
 import { Options } from '../Options/Options';
 
 function App() {
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+  const feedbackData = JSON.parse(localStorage.getItem('feedback')) || { good: 0, neutral: 0, bad: 0 };
+  const [feedback, setFeedback] = useState(feedbackData);
 
   useEffect(() => {
     localStorage.setItem('feedback', JSON.stringify(feedback));
