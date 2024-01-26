@@ -1,5 +1,3 @@
-import css from "./Options.module.css"
-
 export const Options = ({ feedbackClick, resetClick }) => {
     return (
         <div>
