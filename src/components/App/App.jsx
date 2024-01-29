@@ -27,8 +27,7 @@ function App() {
     <div>
       <Description />
       <Options feedbackClick={feedbackClick} resetClick={resetClick} totalCount={totalCount} />
-      <Feedback feedback={feedback} totalCount={totalCount} positivePercent={positivePercent} />
-      <Notification totalCount={totalCount} />
+      {totalCount > 0 ? <Feedback feedback={feedback} totalCount={totalCount} positivePercent={positivePercent} /> : <Notification />}
     </div>
   );
 }

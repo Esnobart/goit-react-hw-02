@@ -1,5 +1,3 @@
-export const Notification = ({ totalCount }) => {
-    if (totalCount === 0) {
-        return (<p>No feedback given</p>)
-    }
+export const Notification = () => {
+    return (<p>No feedback given</p>)
 }
